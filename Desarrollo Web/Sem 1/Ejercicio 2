@@ -1,0 +1,21 @@
+class Documento {
+    private int id;
+    private String direccion;
+
+    public void registrar(int id, String direccion) {
+        this.id = id;
+        this.direccion = direccion;
+    }
+    public void mostrarInformacion() {
+        System.out.println("ID: " + id);
+        System.out.println("Dirección: " + direccion);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Documento doc=new Documento();
+        doc.registrar(1, "123 Main St");
+        doc.mostrarInformacion();
+    }
+}
