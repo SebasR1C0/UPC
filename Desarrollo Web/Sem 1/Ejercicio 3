@@ -1,0 +1,37 @@
+class Documento {
+    private int id;
+    private String direccion;
+
+    public void registrar(int id, String direccion) {
+        this.id = id;
+        this.direccion = direccion;
+    }
+    public void mostrarInformacion() {
+        System.out.println("ID: " + id);
+        System.out.println("Dirección: " + direccion);
+    }
+}
+class Boleta extends Documento {
+    private String nombre;
+    private String apellido;
+    private String DNI;
+    public void registrar(int id, String direccion, String nombre, String apellido, String DNI) {
+        super.registrar(id,direccion);
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.DNI = DNI;
+    }
+    public void mostrarInformacion() {
+        super.mostrarInformacion();
+        System.out.println("DNI: " + DNI);
+        System.out.println("Apellido: " + apellido);
+        System.out.println("Nombre: " + nombre);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Boleta boleta= new Boleta();
+        boleta.registrar(1, "123 Main St", "12345678", "Gomez", "Juan");
+        boleta.mostrarInformacion();
+    }
+}
